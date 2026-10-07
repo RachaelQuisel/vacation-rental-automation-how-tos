@@ -174,3 +174,15 @@ Full detail is in [the script](../videos/backup-cleaner-coverage/script.md) and 
 - Sample data: the cleaners Maria G. and Rosa P., and one week in June.
 - Poster: frame 264 (8.8 seconds).
 - Music: "Rendezvous" by Shane Ivers, CC BY 4.0.
+
+### Door codes for every guest, assigned and revoked automatically
+
+Full detail is in [the script](../videos/guest-door-codes/script.md) and [the post-run analysis](../videos/guest-door-codes/post-run-analysis.md). In short:
+
+- Headline: "Door codes for every guest, assigned and revoked automatically."
+- Four steps: a code is assigned at booking, the code is sent in the welcome message and two reminders, each guest and contractor has their own code, and the code is revoked after checkout. The setup shown is meant not to reuse codes.
+- Demo surfaces: a painted front door with a smart lock keypad (no brand shown), a guest's phone, and a "Front door" card with a door codes table and an entry log.
+- Layout: built from the four-step layout of the other videos. In wide, the door scene is 650x566 at 930/120, the phone is at 1612/150, and the card is 940x304 at 930/712. In square, the steps sit in a 2x2 grid of cards.
+- Sample data: the guests Dana K. and Sam R., the cleaner Maria, and the invented sample codes 4817, 2093, and 6352.
+- Poster: frame 264 (8.8 seconds).
+- Music: "Parisian" by Kevin MacLeod, CC BY 4.0.

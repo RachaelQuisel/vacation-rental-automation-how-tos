@@ -99,3 +99,26 @@ sequenceDiagram
     Note over S,P: 8.8 s, poster frame
     Note over S,P: 9.0 to 9.6 s, empty calendar fades back in
 ```
+
+### Door codes for every guest, assigned and revoked automatically
+
+```mermaid
+sequenceDiagram
+    participant S as Steps panel
+    participant K as Front door and keypad
+    participant P as Guest phone
+    participant T as Door codes card
+    Note over S,T: 0.35 s, new booking for a sample guest
+    T->>T: 0.7 to 1.6 s, a sample code rolls in
+    S->>S: 2.1 s, step 2, phone slides up at 2.2 s
+    T->>P: 2.7 s, welcome text with the code
+    P->>P: 3.05 to 4.1 s, three code sends ticked
+    S->>S: 4.45 s, step 3, guest at the door at 4.55 s
+    P->>K: 4.95 to 5.55 s, guest types the code
+    K->>T: 5.9 s, entry logged
+    T->>T: 6.25 s, other sample codes and entries appear
+    S->>S: 7.1 s, step 4, checkout at 7.2 s
+    T->>K: 7.45 to 7.8 s, code revoked on the card and the keypad
+    Note over S,T: 8.8 s, poster frame
+    Note over S,T: 9.0 to 9.6 s, opening card fades back in
+```

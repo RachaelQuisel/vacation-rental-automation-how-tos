@@ -9,6 +9,7 @@ Videos are added through pull requests.
 - [Schedule your cleaners by text](videos/schedule-cleaners-by-text/): your cleaner gets a text, picks the dates they want to clean, and is signed up on your shared calendar.
 - [Monthly TOT and TBID tax prep](videos/monthly-tax-prep/): payouts and charges land in a database, a script calculates the taxes, fills a sample tax form, and an audit script checks the totals.
 - [When your cleaner can't make it, the next one is asked automatically](videos/backup-cleaner-coverage/): if a cleaner declines a calendar invite, it goes to the next one, and you get a text if a day still needs coverage.
+- [Door codes for every guest, assigned and revoked automatically](videos/guest-door-codes/): each guest gets their own door code in the welcome message and reminders, and the code is revoked after checkout.
 
 More videos are planned. They will be added here as they are finished.
 

@@ -1,6 +1,6 @@
 # Design schema
 
-This is the design system behind the how-to videos, written as tables. Most values come from the cleaner scheduling video ([src/v1.html](../src/v1.html)). The tax prep ([src/v2.html](../src/v2.html)) and backup cleaner ([src/v3.html](../src/v3.html)) videos reuse the palette, fonts, filters, and motion, and change the layout to fit their steps. See [Layout per video](#layout-per-video).
+This is the design system behind the how-to videos, written as tables. Most values come from the cleaner scheduling video ([src/v1.html](../src/v1.html)). The tax prep ([src/v2.html](../src/v2.html)) backup cleaner ([src/v3.html](../src/v3.html)), and door codes ([src/v6.html](../src/v6.html)) videos reuse the palette, fonts, filters, and motion, and change the layout to fit their steps. See [Layout per video](#layout-per-video).
 
 ## Canvas
 
@@ -68,17 +68,19 @@ All values are CSS pixels inside the canvas.
 
 ## Layout per video
 
-| Setting | Cleaner scheduling (v1) | Tax prep (v2) | Backup cleaner (v3) |
-|---|---|---|---|
-| Steps | 3 | 5 | 4 |
-| Wide headline | 72 px, top 268 | 64 px, top 224 | 58 px on 3 lines, top 226 |
-| Wide step rows | 80 px high, 84 px pitch, 29 px text | 76 px high, 80 px pitch, 23 px text | 84 px high, 88 px pitch, 25 px text |
-| Wide cream panel | about y 206 to 866 | top 190, bottom 880 | top 190, bottom 880 |
-| Square headline | 56 px | 52 px on 2 lines | 46 px on 2 lines |
-| Square steps | Cream card to the right of the phone | One row of 5 cards at top 806 | 2x2 grid of cards at top 808 |
-| Demo surface | Phone | Laptop (database, script card, sample tax form) | Painted room card, tablet calendar, phone |
-| Poster frame | 240 (8.0 s) | 264 (8.8 s) | 264 (8.8 s) |
-| Music track | "Le Croissant" from 76.95 s | "La Pompe Du Trompe" from 87.42 s | "Rendezvous" from 99.12 s |
+| Setting | Cleaner scheduling (v1) | Tax prep (v2) | Backup cleaner (v3) | Door codes (v6) |
+|---|---|---|---|---|
+| Steps | 3 | 5 | 4 | 4 |
+| Wide headline | 72 px, top 268 | 64 px, top 224 | 58 px on 3 lines, top 226 | 62 px on 3 lines |
+| Wide step rows | 80 px high, 84 px pitch, 29 px text | 76 px high, 80 px pitch, 23 px text | 84 px high, 88 px pitch, 25 px text | Same as v3 |
+| Wide cream panel | about y 206 to 866 | top 190, bottom 880 | top 190, bottom 880 | top 190, bottom 880 |
+| Square headline | 56 px | 52 px on 2 lines | 46 px on 2 lines | 46 px on 2 lines |
+| Square steps | Cream card to the right of the phone | One row of 5 cards at top 806 | 2x2 grid of cards at top 808 | 2x2 grid of cards |
+| Demo surface | Phone | Laptop (database, script card, sample tax form) | Painted room card, tablet calendar, phone | Painted front door with keypad, phone, door codes card |
+| Poster frame | 240 (8.0 s) | 264 (8.8 s) | 264 (8.8 s) | 264 (8.8 s) |
+| Music track | "Le Croissant" from 76.95 s | "La Pompe Du Trompe" from 87.42 s | "Rendezvous" from 99.12 s | "Parisian" from 0.15 s |
+
+There is no v4 or v5 in this repo. Those numbers are used by videos that are not published here.
 
 The v3 room card uses its own copies of the watercolor filters (`rwc`, `rwc2`, `rgrain`) so the room matches the outdoor scene.
 
@@ -134,7 +136,7 @@ This table is for the cleaner scheduling video. The beat tables for the other vi
 
 | Pattern | Example | Notes |
 |---|---|---|
-| `videos/<slug>/` | `videos/schedule-cleaners-by-text/`, `videos/monthly-tax-prep/`, `videos/backup-cleaner-coverage/` | One folder per video. The slug is a short kebab-case name based on the title. |
+| `videos/<slug>/` | `videos/schedule-cleaners-by-text/`, `videos/monthly-tax-prep/`, `videos/backup-cleaner-coverage/`, `videos/guest-door-codes/` | One folder per video. The slug is a short kebab-case name based on the title. |
 | `<slug>.mp4` | `monthly-tax-prep.mp4` | Main how-to video with music, 1920x1080, 20 s |
 | `loop-1920x1080.mp4` | | Silent wide loop, 10 s |
 | `loop-1080x1080.mp4` | | Silent square loop, 10 s |
@@ -142,6 +144,6 @@ This table is for the cleaner scheduling video. The beat tables for the other vi
 | `README.md` | | Title, description, file list, music credit |
 | `script.md` | | On-screen script and storyboard |
 | `post-run-analysis.md` | | Build notes, checks, fixes, open items |
-| `src/v<N>.html` | `src/v2.html` | Scene file for video N (v1 cleaner scheduling, v2 tax prep, v3 backup cleaner) |
+| `src/v<N>.html` | `src/v2.html` | Scene file for video N (v1 cleaner scheduling, v2 tax prep, v3 backup cleaner, v6 door codes) |
 | `src/render-v<N>.sh` | `src/render-v2.sh` | Render script for video N |
-| Branch | `videos/<slug>-YYYY-MM-DD` | Usually one pull request per video. The first three videos shared one pull request. |
+| Branch | `videos/<slug>-YYYY-MM-DD` | Usually one pull request per video. The first three videos and the door codes video shared one pull request. |

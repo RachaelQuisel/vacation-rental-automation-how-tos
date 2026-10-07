@@ -7,8 +7,9 @@ This folder has the code that builds the videos in this repo.
 | [v1.html](v1.html) | Scene for "Schedule your cleaners by text": painted SVG background, phone screens, steps, and the `render(t)` timing function. Open it in Chrome to see frame 0. Add `?sq` for the square layout. |
 | [v2.html](v2.html) | Scene for "Monthly TOT and TBID tax prep". |
 | [v3.html](v3.html) | Scene for "When your cleaner can't make it, the next one is asked automatically". |
+| [v6.html](v6.html) | Scene for "Door codes for every guest, assigned and revoked automatically". The door codes in it are invented sample codes. |
 | [cap.js](cap.js) | Opens a scene in headless Chrome and saves one PNG per frame. |
-| [render-v1.sh](render-v1.sh), [render-v2.sh](render-v2.sh), [render-v3.sh](render-v3.sh) | Each one captures wide and square frames, encodes both loops, copies the posters, pulls QC frames, and prints a format check. Output goes to `out/`, `out-v2/`, and `out-v3/`. |
+| [render-v1.sh](render-v1.sh), [render-v2.sh](render-v2.sh), [render-v3.sh](render-v3.sh), [render-v6.sh](render-v6.sh) | Each one captures wide and square frames, encodes both loops, copies the posters, pulls QC frames, and prints a format check. Output goes to `out/`, `out-v2/`, `out-v3/`, and `out-v6/`. |
 | [make-music-version.sh](make-music-version.sh) | Plays the wide loop twice and adds a leveled 20 second music excerpt. |
 | [package.json](package.json) | Pins `playwright-core`. |
 
@@ -31,6 +32,7 @@ npm install
 ./render-v1.sh
 ./render-v2.sh
 ./render-v3.sh
+./render-v6.sh
 
 # Quick test with only 0.5 seconds of frames.
 DUR=0.5 OUT=out-test ./render-v1.sh
@@ -45,14 +47,16 @@ For the music versions, download each track from its source page. The audio file
 | v1 | ["Le Croissant"](https://www.silvermansound.com/free-music/le-croissant) | 76.95 |
 | v2 | ["La Pompe Du Trompe"](https://www.silvermansound.com/free-music/la-pompe-du-trompe) | 87.42 |
 | v3 | ["Rendezvous"](https://www.silvermansound.com/free-music/rendezvous) | 99.12 |
+| v6 | ["Parisian" by Kevin MacLeod](https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100120) | 0.15 |
 
 ```bash
 ./make-music-version.sh out/loop-1920x1080.mp4    path/to/le-croissant.mp3       76.95 out/schedule-cleaners-by-text.mp4
 ./make-music-version.sh out-v2/loop-1920x1080.mp4 path/to/la-pompe-du-trompe.mp3 87.42 out-v2/monthly-tax-prep.mp4
 ./make-music-version.sh out-v3/loop-1920x1080.mp4 path/to/rendezvous.mp3         99.12 out-v3/backup-cleaner-coverage.mp4
+./make-music-version.sh out-v6/loop-1920x1080.mp4 path/to/parisian.mp3           0.15 out-v6/guest-door-codes.mp4
 ```
 
-All three tracks are by Shane Ivers ([silvermansound.com](https://www.silvermansound.com)) under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The exact credit line for each is in its video folder README. Keep it with the music version wherever you share it.
+The v1 to v3 tracks are by Shane Ivers ([silvermansound.com](https://www.silvermansound.com)) under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The v6 track is by Kevin MacLeod ([incompetech.com](https://incompetech.com)), also under CC BY 4.0. The exact credit for each is in its video folder README. Keep it with the music version wherever you share it.
 
 ## Notes
 
