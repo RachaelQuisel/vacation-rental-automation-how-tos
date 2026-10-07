@@ -1,0 +1,8 @@
+{
+  "name": "vacation-rental-how-to-video-build",
+  "private": true,
+  "description": "Frame capture for the how-to videos",
+  "dependencies": {
+    "playwright-core": "1.63.0"
+  }
+}
