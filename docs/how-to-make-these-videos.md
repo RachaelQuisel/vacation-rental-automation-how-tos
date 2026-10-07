@@ -1,12 +1,12 @@
 # How these videos are made
 
-This is a spec for making a short how-to video that matches the others in this repo. It is adapted from the build notes for the first video, made on Oct 7, 2026. It should be enough to make a close match, but expect to adjust layout numbers for your own steps.
+This is a spec for making a short how-to video that matches the others in this repo. It is adapted from the build notes for the first three videos, made on Oct 7, 2026. It should be enough to make a close match, but expect to adjust layout numbers for your own steps.
 
 Related docs:
 
 - [Design schema](design-schema.md): palette, fonts, coordinates, filters, and timeline as tables.
 - [Workflow diagrams](workflow.md): the production pipeline and the 10 second loop.
-- [Build code](../src/): the scene file, frame capture, and render scripts for the cleaner video.
+- [Build code](../src/): the scene files, frame capture, and render scripts for each video.
 
 ## Ground rules
 
@@ -107,7 +107,7 @@ ffmpeg -y -framerate 30 -i frames-square/f%04d.png $E loop-1080x1080.mp4
 
 ### 9. Pick the poster frame
 
-Use a frame where the story is complete. For the cleaner video that is frame 240 (8.0 seconds): the filled calendar, step 3, and the note are all on screen.
+Use a frame where the story is complete. For the cleaner video that is frame 240 (8.0 seconds): the filled calendar, step 3, and the note are all on screen. The tax prep and backup cleaner videos use frame 264 (8.8 seconds), after their last beat lands.
 
 ### 10. QC frame check
 
@@ -151,10 +151,26 @@ Full detail is in [the script](../videos/schedule-cleaners-by-text/script.md) an
 - Sample data: one cleaner named Maria G. and four turnover dates in June.
 - Music: "Le Croissant" by Shane Ivers, CC BY 4.0.
 
-### Monthly TOT and TBID tax prep (coming soon)
+### Monthly TOT and TBID tax prep
 
-Same recipe with five steps and a laptop as the demo surface. Sample payouts and charges go into a database, a script calculates the taxes, the numbers are mapped onto a sample tax form, and an audit step checks the totals.
+Full detail is in [the script](../videos/monthly-tax-prep/script.md) and [the post-run analysis](../videos/monthly-tax-prep/post-run-analysis.md). In short:
 
-### When your cleaner can't make it, the next one is asked automatically (coming soon)
+- Headline: "Monthly tax prep, done before you sit down."
+- Five steps: platforms connected, a database, a calculation script, a script that fills the form, and an audit script.
+- Demo surface: a laptop with three screens (a tax prep database, a dark script card, and a simplified sample city tax form).
+- Layout changes for five steps: in wide, the headline is 64 px and the step rows are 76 px high on an 80 px pitch with 23 px text. In square, the steps sit in one row of five small cards.
+- Sample data: six of 18 rows, with totals that add up. The account field reads "SAMPLE-0001", and the form carries a "Sample, invented numbers" tag.
+- Poster: frame 264 (8.8 seconds).
+- Music: "La Pompe Du Trompe" by Shane Ivers, CC BY 4.0.
 
-Same recipe with four steps, a tablet calendar, and a phone. A sample cleaner declines a calendar invite, the next sample cleaner accepts, and the owner gets a text if a day still needs coverage.
+### When your cleaner can't make it, the next one is asked automatically
+
+Full detail is in [the script](../videos/backup-cleaner-coverage/script.md) and [the post-run analysis](../videos/backup-cleaner-coverage/post-run-analysis.md). In short:
+
+- Headline: "When your cleaner can't make it, the next one is asked automatically."
+- Four steps: a booking creates a task, the cleaner gets an invite, a decline goes to the next cleaner, and you get a text if a day is still open.
+- Demo surfaces: a painted guest room that goes from messy to clean, a tablet with a week of the cleaning calendar, and a phone that shows each person's view.
+- Layout changes for four steps: in wide, the headline is 58 px on three lines and the step rows are 84 px high on an 88 px pitch. In square, the steps sit in a 2x2 grid of cards.
+- Sample data: the cleaners Maria G. and Rosa P., and one week in June.
+- Poster: frame 264 (8.8 seconds).
+- Music: "Rendezvous" by Shane Ivers, CC BY 4.0.

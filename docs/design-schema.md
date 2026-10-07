@@ -1,6 +1,6 @@
 # Design schema
 
-This is the design system behind the how-to videos, written as tables. The values come from the cleaner scheduling video ([src/v1.html](../src/v1.html)). Later videos reuse most of it and change the layout to fit their steps.
+This is the design system behind the how-to videos, written as tables. Most values come from the cleaner scheduling video ([src/v1.html](../src/v1.html)). The tax prep ([src/v2.html](../src/v2.html)) and backup cleaner ([src/v3.html](../src/v3.html)) videos reuse the palette, fonts, filters, and motion, and change the layout to fit their steps. See [Layout per video](#layout-per-video).
 
 ## Canvas
 
@@ -66,6 +66,22 @@ All values are CSS pixels inside the canvas.
 | Phone | left 1030, top 120, 420x860, radius 64 | left 60, top 200, scaled 0.88 |
 | Paper note | left 1500, top 300, width 310, rotated -3 deg | left 600, top 820, width 290 |
 
+## Layout per video
+
+| Setting | Cleaner scheduling (v1) | Tax prep (v2) | Backup cleaner (v3) |
+|---|---|---|---|
+| Steps | 3 | 5 | 4 |
+| Wide headline | 72 px, top 268 | 64 px, top 224 | 58 px on 3 lines, top 226 |
+| Wide step rows | 80 px high, 84 px pitch, 29 px text | 76 px high, 80 px pitch, 23 px text | 84 px high, 88 px pitch, 25 px text |
+| Wide cream panel | about y 206 to 866 | top 190, bottom 880 | top 190, bottom 880 |
+| Square headline | 56 px | 52 px on 2 lines | 46 px on 2 lines |
+| Square steps | Cream card to the right of the phone | One row of 5 cards at top 806 | 2x2 grid of cards at top 808 |
+| Demo surface | Phone | Laptop (database, script card, sample tax form) | Painted room card, tablet calendar, phone |
+| Poster frame | 240 (8.0 s) | 264 (8.8 s) | 264 (8.8 s) |
+| Music track | "Le Croissant" from 76.95 s | "La Pompe Du Trompe" from 87.42 s | "Rendezvous" from 99.12 s |
+
+The v3 room card uses its own copies of the watercolor filters (`rwc`, `rwc2`, `rgrain`) so the room matches the outdoor scene.
+
 ## Painted scene and SVG filters
 
 | Filter | Recipe | Applied to |
@@ -90,7 +106,7 @@ All values are CSS pixels inside the canvas.
 
 ## Timeline schema
 
-Each beat is one row. `render(t)` sets every element to its state at time `t`, so there is no hidden state between frames.
+This table is for the cleaner scheduling video. The beat tables for the other videos are in each video's `script.md`. Each beat is one row. `render(t)` sets every element to its state at time `t`, so there is no hidden state between frames.
 
 | Start (s) | End (s) | Element | Action |
 |---|---|---|---|
@@ -118,14 +134,14 @@ Each beat is one row. `render(t)` sets every element to its state at time `t`, s
 
 | Pattern | Example | Notes |
 |---|---|---|
-| `videos/<slug>/` | `videos/schedule-cleaners-by-text/` | One folder per video. Slug is the title in lowercase with dashes. |
-| `<slug>.mp4` | `schedule-cleaners-by-text.mp4` | Main how-to video with music, 1920x1080, 20 s |
+| `videos/<slug>/` | `videos/schedule-cleaners-by-text/`, `videos/monthly-tax-prep/`, `videos/backup-cleaner-coverage/` | One folder per video. The slug is a short kebab-case name based on the title. |
+| `<slug>.mp4` | `monthly-tax-prep.mp4` | Main how-to video with music, 1920x1080, 20 s |
 | `loop-1920x1080.mp4` | | Silent wide loop, 10 s |
 | `loop-1080x1080.mp4` | | Silent square loop, 10 s |
 | `poster.png`, `poster-square.png` | | Poster frames from the loops |
 | `README.md` | | Title, description, file list, music credit |
 | `script.md` | | On-screen script and storyboard |
 | `post-run-analysis.md` | | Build notes, checks, fixes, open items |
-| `src/v<N>.html` | `src/v1.html` | Scene file for video N |
-| `src/render-v<N>.sh` | `src/render-v1.sh` | Render script for video N |
-| Branch | `videos/<slug>-YYYY-MM-DD` | One pull request per video |
+| `src/v<N>.html` | `src/v2.html` | Scene file for video N (v1 cleaner scheduling, v2 tax prep, v3 backup cleaner) |
+| `src/render-v<N>.sh` | `src/render-v2.sh` | Render script for video N |
+| Branch | `videos/<slug>-YYYY-MM-DD` | Usually one pull request per video. The first three videos shared one pull request. |

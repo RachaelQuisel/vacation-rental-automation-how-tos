@@ -1,0 +1,237 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+:root{--leaf:#5F8F55;--deep:#2F5A44;--roof:#C2643F;--ink:#24344D;--paper:#FBF4E4;--sand:#F0E1C2}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;font-family:Nunito,sans-serif;color:var(--ink)}
+body.sq{width:1080px;height:1080px}
+#scene{position:absolute;inset:0;width:1920px;height:1080px}
+body.sq #scene{left:-790px}
+body.sq #panel{display:none}
+svg{display:block}
+.copy{position:absolute;left:150px;top:268px;width:680px}
+.copy h1{font-weight:800;font-size:72px;line-height:1.02;letter-spacing:-1.5px}
+.steps{position:absolute;left:122px;top:536px;width:736px}
+.hl{position:absolute;left:0;top:0;width:100%;height:80px;border-radius:40px;background:var(--sand)}
+.step{position:relative;display:flex;align-items:center;gap:22px;height:80px;padding:0 24px;font-size:28px;font-weight:700;color:#7D879A;margin-bottom:4px;white-space:nowrap}
+.num{flex:none;width:52px;height:52px;border-radius:50%;border:3px solid #A3AEBE;display:flex;align-items:center;justify-content:center;font-size:25px;font-weight:800;color:#7D879A;background:var(--paper)}
+.step.on{color:var(--ink)}.step.on .num{background:var(--roof);border-color:var(--roof);color:#fff}
+/* laptop */
+.laptop{position:absolute;left:965px;top:170px;width:900px}
+.lid{background:#2B3A52;border-radius:28px 28px 10px 10px;padding:18px;box-shadow:0 30px 60px rgba(36,52,77,.28),0 0 0 3px #43557A inset}
+.screen{position:relative;width:864px;height:560px;border-radius:12px;overflow:hidden;background:#FDF8EE}
+.base{position:relative;left:-50px;width:1000px;height:26px;background:linear-gradient(#C9CFD8,#A9B2C0);border-radius:2px 2px 22px 22px;box-shadow:0 14px 24px rgba(36,52,77,.22)}
+.base:after{content:"";position:absolute;left:50%;top:0;width:140px;height:9px;margin-left:-70px;background:#97A1B1;border-radius:0 0 10px 10px}
+.view{position:absolute;inset:0;background:#FDF8EE}
+.bar{display:flex;justify-content:space-between;align-items:center;padding:20px 28px 14px;border-bottom:2px solid #EFE4CF}
+.bar .ti{font-size:24px;font-weight:800}
+.pill{font-size:17px;font-weight:800;background:var(--sand);border-radius:16px;padding:6px 16px;color:#6B5B3F}
+.inbox{position:relative;margin:22px 28px 0;height:190px;border:3px dashed #E2D4BA;border-radius:20px}
+.wait{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:#9AA3B2}
+.rep{position:absolute;top:18px;width:380px;height:150px;background:#fff;border:2.5px solid #E6D8BE;border-radius:18px;padding:18px 20px;display:flex;gap:16px}
+.rep .ic{flex:none;width:58px;height:72px;border-radius:8px;background:#EEF4E7;border:2.5px solid #9DBB8E;position:relative}
+.rep .ic i{position:absolute;left:10px;right:10px;height:4px;border-radius:2px;background:#9DBB8E}
+.rep .nm{font-size:20px;font-weight:800}.rep .sb{font-size:16px;font-weight:700;color:#7A8597;margin-top:3px}
+.rep .amt{font-size:26px;font-weight:800;margin-top:12px;color:var(--deep)}
+#rA{left:18px}#rB{left:416px}
+#rB .ic{background:#F6E6DC;border-color:#D9A385}#rB .ic i{background:#D9A385}
+.tot{margin:22px 28px 0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tr{display:flex;justify-content:space-between;align-items:center;background:#F4ECDC;border-radius:14px;padding:16px 20px;font-size:19px;font-weight:700;color:#5C6779}
+.tr b{font-size:24px;font-weight:800;color:var(--ink)}
+.form{background:#E9E2D2;padding:16px 20px}
+.sheet{position:relative;height:100%;background:#FFFDF8;border-radius:6px;box-shadow:0 4px 0 #D8CDB6;padding:18px 26px}
+.fh .c{font-size:15px;font-weight:800;color:#7A8597}
+.fh .t{font-size:24px;font-weight:800;margin-top:1px}
+.tag{position:absolute;right:22px;top:20px;font-size:15px;font-weight:800;color:#9A4426;background:#F3D9C9;border-radius:14px;padding:6px 14px}
+.flds{display:flex;gap:14px;margin:12px 0 10px}
+.fld{flex:1;border-bottom:2px solid #D9CDB4;padding:2px 0 5px;font-size:13px;font-weight:800;color:#8A93A3}
+.fld span{display:block;font-size:18px;color:var(--ink);height:24px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.ch{font-size:15px;font-weight:800;color:var(--roof);margin-bottom:2px}
+.ln{display:flex;justify-content:space-between;align-items:center;height:37px;border-bottom:1.5px solid #EFE6D3;font-size:16px;font-weight:700;color:#4F5B70;padding:0 6px;border-radius:6px}
+.ln .v{font-size:18px;font-weight:800;color:var(--ink);min-width:110px;text-align:right}
+.ln.sub{padding-left:22px}
+.ln9{display:flex;justify-content:space-between;align-items:center;margin-top:12px;background:#F4ECDC;border-radius:10px;padding:10px 16px;font-size:19px;font-weight:800}
+.ln9 .v{font-size:24px;color:var(--deep)}
+.stamp{position:absolute;right:34px;bottom:22px;border:4px solid var(--leaf);color:var(--leaf);border-radius:14px;padding:8px 18px;font-size:26px;font-weight:800;transform:rotate(-6deg);background:rgba(255,253,248,.92)}
+.note{position:absolute;left:1560px;top:820px;width:300px;background:var(--paper);padding:28px 24px 22px;border-radius:6px;transform:rotate(-3deg);box-shadow:0 16px 30px rgba(36,52,77,.2);font-family:Caveat;font-size:40px;line-height:1.05;color:#2F5A44;text-align:center}
+.tape{position:absolute;top:-14px;left:50%;width:96px;height:28px;margin-left:-48px;background:rgba(214,196,160,.75);transform:rotate(2deg)}
+body.sq .copy{left:60px;top:46px;width:960px}
+body.sq .copy h1{font-size:54px}
+body.sq br.w{display:none}
+body.sq .laptop{left:90px;top:190px;transform:scale(1);}
+body.sq .steps{left:40px;top:850px;width:1000px;display:flex;gap:10px;background:rgba(251,244,228,.94);border-radius:28px;padding:12px}
+body.sq .hl{display:none}
+body.sq .step{flex:1;white-space:normal;font-size:20px;line-height:1.2;height:auto;min-height:150px;padding:14px 16px;gap:12px;margin:0;border-radius:22px;align-items:center}
+body.sq .step.on{background:var(--sand)}
+body.sq .num{width:40px;height:40px;font-size:19px}
+body.sq .note{left:120px;top:672px;width:250px;font-size:34px;padding:24px 18px 18px}
+
+/* v2 rework: five steps */
+.copy{top:224px}.copy h1{font-size:64px}
+.steps{top:438px}
+.hl{height:76px;border-radius:28px}
+.step{height:76px;white-space:normal;font-size:23px;line-height:1.15;gap:18px}
+.num{width:46px;height:46px;font-size:22px}
+.smp{font-size:14px;font-weight:800;color:#9A4426;background:#F3D9C9;border-radius:12px;padding:5px 12px;margin-left:12px}
+.bar .r{display:flex;align-items:center}
+.srcs{position:absolute;left:20px;top:80px;width:160px}
+.lbl{font-size:14px;font-weight:800;color:#8A93A3;letter-spacing:.5px;text-transform:uppercase;height:28px}
+.plat{position:relative;height:70px;margin-bottom:12px;border-radius:16px;background:#fff;border:2.5px solid #E6D8BE;padding:10px 14px}
+.plat .pn{font-size:20px;font-weight:800;display:flex;align-items:center;gap:8px}
+.plat .dot{width:12px;height:12px;border-radius:50%;background:#C9CFD8}
+.plat .ps{font-size:13px;font-weight:700;color:#7A8597;margin-top:4px;white-space:nowrap}
+.grid{position:absolute;left:196px;top:80px;width:648px;height:306px;border:2px solid #EADFC9;border-radius:14px;overflow:hidden;background:#FFFDF8}
+.gr{position:absolute;left:0;right:0;height:38px;display:grid;grid-template-columns:76px 86px 100px 1fr 120px;align-items:center;padding:0 14px;font-size:15px;font-weight:700;color:#4F5B70;border-bottom:1.5px solid #F1E7D4}
+.gr.h{top:0;height:34px;background:#F4ECDC;font-size:13px;font-weight:800;color:#7A8597;text-transform:uppercase;letter-spacing:.4px}
+.gr .am{text-align:right;font-weight:800;color:var(--ink)}
+.gr .am.neg{color:#9A4426}
+.ty{justify-self:start;font-size:13px;font-weight:800;border-radius:9px;padding:2px 9px}
+.ty.in{background:#E1EDD8;color:#3E6B3A}.ty.ex{background:#F6DACB;color:#9A4426}
+.gf{position:absolute;left:0;right:0;bottom:0;height:42px;display:flex;align-items:center;gap:22px;padding:0 14px;background:#F4ECDC;font-size:15px;font-weight:700;color:#5C6779}
+.gf b{font-size:17px;font-weight:800;color:var(--ink);margin-left:6px}
+.gf .rc{margin-left:auto;font-size:13px;font-weight:800;color:#8A93A3}
+.script{position:absolute;left:20px;right:20px;top:396px;height:152px;border-radius:16px;background:#24344D;color:#E9EEF5;padding:12px 20px;font-family:'DejaVu Sans Mono',monospace;box-shadow:0 8px 18px rgba(36,52,77,.18)}
+.sh{display:flex;align-items:center;gap:10px;font-family:Nunito,sans-serif;font-size:15px;font-weight:800;color:#AFC0D6;height:24px}
+.sh .st{margin-left:auto;font-size:13px;border-radius:9px;padding:1px 10px;background:#3A4C68;color:#E9EEF5}
+.sl{display:flex;justify-content:space-between;font-size:16px;height:26px;align-items:center;color:#C9D4E3}
+.sl b{color:#fff;font-weight:700}
+.sl.sum{color:#F3D9A8}.sl.sum b{color:#F3D9A8}
+.ln{position:relative;padding-right:34px;font-size:15px}
+.ln .v{font-size:17px;min-width:100px}
+.ln9{padding-right:44px}
+.ck{position:absolute;right:6px;top:8px;width:21px;height:21px;border-radius:50%;background:var(--leaf);color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;font-style:normal;opacity:0}
+.ln9{position:relative}
+.ln9 .ck{right:12px;top:13px;width:22px;height:22px}
+.audit{position:absolute;left:26px;right:26px;bottom:16px;height:58px;border-radius:14px;background:#EEF4E7;border:2px solid #9DBB8E;display:flex;align-items:center;gap:14px;padding:0 10px 0 16px;font-size:15px;font-weight:700;color:#4F5B70;opacity:0}
+.audit .an{font-weight:800;color:var(--deep);font-size:16px}
+.audit .ok{margin-left:auto;background:var(--deep);color:#fff;border-radius:11px;padding:7px 14px;font-size:18px;font-weight:800;white-space:nowrap}
+.note{left:1560px;top:812px;width:310px;font-size:38px}
+body.sq .copy h1{font-size:52px}
+body.sq .laptop{left:135px;top:172px;transform:scale(.9);transform-origin:0 0}
+body.sq .steps{top:806px;gap:8px;padding:10px}
+body.sq .step{flex-direction:column;align-items:flex-start;min-height:0;height:212px;font-size:17px;line-height:1.22;padding:12px 12px;gap:8px}
+body.sq .num{width:36px;height:36px;font-size:17px}
+body.sq .note{left:852px;top:16px;width:214px;font-size:28px;padding:22px 12px 14px}
+</style></head><body>
+<svg id="scene" viewBox="0 0 1920 1080">
+<defs>
+<filter id="wc" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="3" seed="4"/><feDisplacementMap in="SourceGraphic" scale="22"/></filter>
+<filter id="soft"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="9"/><feDisplacementMap in="SourceGraphic" scale="30"/><feGaussianBlur stdDeviation="2.2"/></filter>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="2"/><feColorMatrix values="0 0 0 0 0.45  0 0 0 0 0.38  0 0 0 0 0.28  0 0 0 0.09 0"/></filter>
+<linearGradient id="skyg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9FCBE2"/><stop offset=".6" stop-color="#D7E8E6"/><stop offset="1" stop-color="#F6E7C6"/></linearGradient>
+<radialGradient id="sun" cx=".18" cy=".22" r=".7"><stop offset="0" stop-color="#FFE7B0" stop-opacity=".75"/><stop offset="1" stop-color="#FFE7B0" stop-opacity="0"/></radialGradient>
+<g id="cloud"><g filter="url(#soft)" fill="#FFF9EE"><ellipse cx="0" cy="0" rx="150" ry="70"/><ellipse cx="-90" cy="20" rx="110" ry="60"/><ellipse cx="100" cy="15" rx="120" ry="58"/><ellipse cx="20" cy="-55" rx="95" ry="80"/><ellipse cx="-30" cy="-30" rx="80" ry="70"/></g><ellipse cx="0" cy="48" rx="230" ry="26" fill="#C9D6E0" opacity=".55" filter="url(#soft)"/></g>
+</defs>
+<rect width="1920" height="1080" fill="url(#skyg)"/>
+<rect width="1920" height="1080" fill="url(#sun)"/>
+<g id="clouds"></g>
+<!-- far hills -->
+<path filter="url(#wc)" fill="#9DB89A" opacity=".85" d="M-50 690 C200 600 380 640 560 600 S900 560 1100 610 S1500 560 1700 600 S1950 620 1990 640 L1990 1100 L-50 1100Z"/>
+<path filter="url(#wc)" fill="#7FA36F" d="M-50 760 C220 700 420 740 640 710 S1100 680 1350 720 S1800 700 1990 730 L1990 1100 L-50 1100Z"/>
+<!-- cottage (behind phone, right side) -->
+<g filter="url(#wc)" transform="translate(1340 520)">
+ <rect x="20" y="120" width="460" height="230" fill="#F7EBD3"/>
+ <path d="M-20 130 L250 10 L520 130Z" fill="#C2643F"/>
+ <path d="M-20 130 L250 10 L520 130" fill="none" stroke="#9B4A2C" stroke-width="10"/>
+ <rect x="320" y="200" width="70" height="90" rx="35" fill="#5C7F92"/>
+ <rect x="80" y="200" width="70" height="150" rx="35" fill="#3F6B57"/>
+ <rect x="200" y="210" width="60" height="60" rx="30" fill="#5C7F92"/>
+</g>
+<!-- bougainvillea -->
+<g id="bloom" filter="url(#wc)"></g>
+<!-- foreground meadow -->
+<path filter="url(#wc)" fill="#5F8F55" d="M-50 870 C260 820 520 860 820 840 S1400 820 1990 860 L1990 1100 L-50 1100Z"/>
+<path filter="url(#wc)" fill="#46754A" d="M-50 960 C300 930 700 970 1100 950 S1700 940 1990 970 L1990 1100 L-50 1100Z"/>
+<!-- paper panel behind copy -->
+<path id="panel" filter="url(#wc)" fill="#FBF4E4" opacity=".9" d="M90 190 C300 170 620 176 876 192 L890 880 C600 896 330 890 96 876Z"/>
+<g id="leaves"></g>
+<rect width="1920" height="1080" filter="url(#grain)" opacity="1"/>
+</svg>
+<div class="copy"><h1>Monthly tax prep,<br>done before<br class="w"> you sit down</h1></div>
+<div class="steps" id="steps"><div class="hl" id="hl"></div>
+ <div class="step" id="st0"><span class="num">1</span><span>Your platforms are connected to track payouts and charges</span></div>
+ <div class="step" id="st1"><span class="num">2</span><span>Income and expenses are added to a database</span></div>
+ <div class="step" id="st2"><span class="num">3</span><span>A script calculates your TOT and TBID</span></div>
+ <div class="step" id="st3"><span class="num">4</span><span>A script maps the numbers onto the official tax form</span></div>
+ <div class="step" id="st4"><span class="num">5</span><span>An audit script checks that the numbers add up</span></div></div>
+<div class="laptop"><div class="lid"><div class="screen" id="screen">
+ <div class="view" id="vApp"><div class="bar"><span class="ti">Tax prep database</span><span class="r"><span class="pill">June</span><span class="smp">Sample data</span></span></div>
+  <div class="srcs"><div class="lbl">Connected</div>
+   <div class="plat" id="p0"><div class="pn"><i class="dot" id="d0"></i>Airbnb</div><div class="ps" id="s0">Connecting</div></div>
+   <div class="plat" id="p1"><div class="pn"><i class="dot" id="d1"></i>Vrbo</div><div class="ps" id="s1">Connecting</div></div></div>
+  <div class="grid"><div class="gr h"><span>Date</span><span>Source</span><span>Type</span><span>Item</span><span class="am" style="color:#7A8597">Amount</span></div><div class="gr" id="g0" style="top:34px"><span>Jun 3</span><span>Airbnb</span><span class="ty in">Income</span><span>Rent, 3 nights</span><span class="am">$1,410.00</span></div><div class="gr" id="g1" style="top:72px"><span>Jun 3</span><span>Airbnb</span><span class="ty ex">Expense</span><span>Host service fee</span><span class="am neg">−$42.30</span></div><div class="gr" id="g2" style="top:110px"><span>Jun 8</span><span>Vrbo</span><span class="ty in">Income</span><span>Rent, 4 nights</span><span class="am">$1,920.00</span></div><div class="gr" id="g3" style="top:148px"><span>Jun 8</span><span>Vrbo</span><span class="ty ex">Expense</span><span>Payment processing</span><span class="am neg">−$57.60</span></div><div class="gr" id="g4" style="top:186px"><span>Jun 14</span><span>Airbnb</span><span class="ty in">Income</span><span>Rent, 2 nights</span><span class="am">$980.00</span></div><div class="gr" id="g5" style="top:224px"><span>Jun 14</span><span>Airbnb</span><span class="ty ex">Expense</span><span>Host service fee</span><span class="am neg">−$29.40</span></div>
+   <div class="gf" id="gf">Income<b id="inc">$0.00</b>Expenses<b id="exp">$0.00</b><span class="rc" id="rc">0 rows</span></div></div>
+  <div class="script" id="script"><div class="sh">tax_calc · June<span class="st" id="sst">running</span></div>
+   <div class="sl" id="k0"><span>taxable_rent = income</span><b>$10,240.00</b></div>
+   <div class="sl" id="k1"><span>TOT  = 10,240.00 × 12%</span><b>$1,228.80</b></div>
+   <div class="sl" id="k2"><span>TBID = 10,240.00 × 2%</span><b>$204.80</b></div>
+   <div class="sl sum" id="k3"><span>total_due = TOT + TBID</span><b>$1,433.60</b></div></div></div>
+ <div class="view form" id="vForm"><div class="sheet"><div class="fh"><div class="c">City of Santa Barbara</div><div class="t">TOT &amp; TBID Monthly Return</div></div><div class="tag">Sample, invented numbers</div><div class="flds"><div class="fld">Filing period<span id="f0">June</span></div><div class="fld">Business name<span id="f1">La Maison</span></div><div class="fld">TOT account<span id="f2">SAMPLE-0001</span></div></div><div class="cols"><div><div class="ch">Calculation of TOT</div><div class="ln" id="rl1"><span>1. Total rents for the month</span><span class="v" id="l1"></span><i class=ck id=c1>✓</i></div><div class="ln sub" id="rl2a"><span>2a. Stays over 30 days</span><span class="v" id="l2a"></span></div><div class="ln sub" id="rl2b"><span>2b. Federal or diplomat stays</span><span class="v" id="l2b"></span></div><div class="ln" id="rl3"><span>3. Taxable rents</span><span class="v" id="l3"></span><i class=ck id=c3>✓</i></div><div class="ln" id="rl4"><span>4. TOT due (12%)</span><span class="v" id="l4"></span><i class=ck id=c4>✓</i></div></div><div><div class="ch">Calculation of TBID</div><div class="ln" id="rl5"><span>5. Room rental revenue</span><span class="v" id="l5"></span><i class=ck id=c5>✓</i></div><div class="ln sub" id="rl6a"><span>6a. Stays over 30 days</span><span class="v" id="l6a"></span></div><div class="ln sub" id="rl6b"><span>6b. Federal or diplomat stays</span><span class="v" id="l6b"></span></div><div class="ln" id="rl7"><span>7. Taxable rents</span><span class="v" id="l7"></span><i class=ck id=c7>✓</i></div><div class="ln" id="rl8"><span>8. TBID due (2%)</span><span class="v" id="l8"></span><i class=ck id=c8>✓</i></div></div></div><div class="ln9" id="rl9"><span>9. Total TOT + TBID due</span><span class="v" id="l9"></span><i class="ck" id="c9">✓</i></div><div class="audit" id="audit"><span class="an">Audit script</span><span>Line 1 = database income · 12% and 2% rechecked · Line 9 = 4 + 8</span><span class="ok" id="ok">Totals match ✓</span></div></div></div>
+ <div class="view" id="vBlank" style="opacity:0"></div>
+</div></div><div class="base"></div></div>
+<div class="note" id="note"><i class="tape"></i>June return,<br>totals checked ✓</div>
+<script>
+if(location.search.includes('sq'))document.body.classList.add('sq');
+const SQ=document.body.classList.contains('sq');
+const D=10, NS='http://www.w3.org/2000/svg';
+const C=[[300,170,1],[1000,110,.7],[1700,200,1.1],[2400,140,.8]];
+const cg=document.getElementById('clouds');
+C.forEach(c=>{const u=document.createElementNS(NS,'use');u.setAttribute('href','#cloud');cg.appendChild(u);c.el=u});
+const bg=document.getElementById('bloom');let s=7;const r=()=>(s=(s*9301+49297)%233280)/233280;
+[[1330,640,140],[1830,620,120],[1600,870,160]].forEach(([x,y,R])=>{for(let i=0;i<70;i++){const e=document.createElementNS(NS,'circle');const a=r()*6.28,d=Math.sqrt(r())*R;e.setAttribute('cx',x+Math.cos(a)*d);e.setAttribute('cy',y+Math.sin(a)*d*.7);e.setAttribute('r',8+r()*14);e.setAttribute('fill',i%5==0?'#4E7F4A':(i%3?'#C93F77':'#E06A9A'));e.setAttribute('opacity',.85);bg.appendChild(e)}});
+const lg=document.getElementById('leaves');const L=[];for(let i=0;i<9;i++){const p=document.createElementNS(NS,'ellipse');p.setAttribute('rx',9);p.setAttribute('ry',4.5);p.setAttribute('fill',i%2?'#7FA36F':'#D86A92');lg.appendChild(p);L.push({p,x:r()*1920,y:r()*600+150,ph:r()})}
+
+
+const $=id=>document.getElementById(id);
+const cl=x=>Math.max(0,Math.min(1,x));
+const ease=x=>{x=cl(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};
+const back=x=>{x=cl(x);const c=1.6;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const seg=(t,a,b)=>cl((t-a)/(b-a));
+const money=v=>'$'+v.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+// invented June numbers: rent income 10,240.00 across 18 database rows; platform charges 307.20 (3%)
+const RENT=10240, EXP=307.20, TOT=Math.round(RENT*0.12*100)/100, TBID=Math.round(RENT*0.02*100)/100;
+const LINES=[['1',RENT],['2a',0],['2b',0],['3',RENT],['4',TOT],['5',RENT],['6a',0],['6b',0],['7',RENT],['8',TBID],['9',TOT+TBID]];
+LINES.forEach(([id,v])=>$('l'+id).textContent=money(v));
+const SRC=[0, 0, 1, 1, 0, 0];
+// chip centers (y in app coords) vs row centers
+const CHIP=[112+35,194+35], ROW=i=>80+34+i*38+19;
+const R0=.75, RD=.22, T0=5.8, DT=.12;
+const CKS=['1','3','4','5','7','8','9'];
+window.render=function(t){
+ C.forEach(c=>{let x=((c[0]+t/D*2800)%2800)-450;c.el.setAttribute('transform',`translate(${x} ${c[1]}) scale(${c[2]})`)});
+ L.forEach(l=>{const k=(t/D+l.ph)%1;const x=(l.x+k*1920)%2000-40,y=l.y+k*260+Math.sin(k*12.56)*30;l.p.setAttribute('transform',`translate(${x} ${y}) rotate(${k*720})`)});
+ const out=ease(seg(t,9.0,9.6));
+ // 1: platforms connect
+ [0,1].forEach(i=>{const k=seg(t,.25+i*.2,.5+i*.2);$('d'+i).style.background=k>=1?'#5F8F55':(k>0?'#C9B57A':'#C9CFD8');$('s'+i).textContent=k>=1?'Payouts + charges':'Connecting';
+  let em=0;SRC.forEach((s,j)=>{if(s==i){const a=R0+j*RD;em=Math.max(em,seg(t,a-.05,a+.05)*(1-seg(t,a+.15,a+.4)))}});
+  $('p'+i).style.borderColor=em>0?`rgba(95,143,85,${.4+.6*em})`:'';$('p'+i).style.boxShadow=em>0?`0 0 0 ${4*em}px rgba(157,187,142,.45)`:''});
+ // rows fly from their platform into the database grid
+ let landed=0;
+ SRC.forEach((s,i)=>{const a=R0+i*RD, k=ease(seg(t,a,a+.45)), e=$('g'+i);e.style.opacity=seg(t,a,a+.15);
+  e.style.transform=`translate(${(1-k)*-190}px,${(1-k)*(CHIP[s]-ROW(i))}px) scale(${.7+.3*k})`;
+  const f=seg(t,a+.4,a+.5)*(1-seg(t,a+.7,a+1.1));e.style.background=f>0?`rgba(240,225,194,${f})`:'';if(t>=a+.45)landed++});
+ // 2: database totals
+ const rk=seg(t,R0,2.7);$('rc').textContent=Math.round(18*rk)+' rows';
+ const tk=ease(seg(t,2.3,3.1));$('inc').textContent=money(Math.round(RENT*tk*100)/100);$('exp').textContent=money(Math.round(EXP*tk*100)/100);
+ const gfl=seg(t,2.2,2.35)*(1-seg(t,3.1,3.4));$('gf').style.boxShadow=gfl>0?`inset 0 0 0 ${3*gfl}px rgba(95,143,85,.6)`:'';
+ // 3: calc script
+ const sk=ease(seg(t,3.4,3.75));$('script').style.opacity=seg(t,3.4,3.55);$('script').style.transform=`translateY(${(1-sk)*40}px)`;
+ [0,1,2,3].forEach(i=>{const a=3.75+i*.22;$('k'+i).style.clipPath=`inset(0 ${100-100*ease(seg(t,a,a+.3))}% 0 0)`});
+ const done=t>=4.75;$('sst').textContent=done?'done ✓':'running';$('sst').style.background=done?'#5F8F55':'';
+ // 4: form fills
+ $('vForm').style.transform=`translateY(${(1-ease(seg(t,5.05,5.5)))*100}%)`;
+ ['f0','f1','f2'].forEach((id,i)=>{$(id).style.clipPath=`inset(0 ${100-100*seg(t,5.5+i*.06,5.75+i*.06)}% 0 0)`});
+ LINES.forEach(([id],i)=>{const a=T0+i*DT;$('l'+id).style.clipPath=`inset(0 ${100-100*ease(seg(t,a,a+.2))}% 0 0)`;const f=seg(t,a-.05,a+.1)*(1-seg(t,a+.3,a+.55));$('rl'+id).style.background=f>0?`rgba(240,225,194,${f})`:''});
+ // 5: audit
+ const ak=ease(seg(t,7.35,7.7));$('audit').style.opacity=seg(t,7.35,7.5);$('audit').style.transform=`translateY(${(1-ak)*24}px)`;
+ CKS.forEach((id,i)=>{const a=7.65+i*.09, k=seg(t,a,a+.25);$('c'+id).style.opacity=seg(t,a,a+.08);$('c'+id).style.transform=`scale(${back(k)})`});
+ const ok=seg(t,8.3,8.65);$('ok').style.opacity=.25+.75*seg(t,8.3,8.4);$('ok').style.transform=`scale(${.9+.1*back(ok)})`;$('ok').style.background=t>=8.3?'':'#9DBB8E';
+ $('vBlank').style.opacity=out;
+ // steps (5)
+ const pos=t<1.9?0:t<2.2?ease(seg(t,1.9,2.2)):t<3.3?1:t<3.6?1+ease(seg(t,3.3,3.6)):t<4.95?2:t<5.25?2+ease(seg(t,4.95,5.25)):t<7.25?3:t<7.55?3+ease(seg(t,7.25,7.55)):t<9.1?4:t<9.5?4-4*ease(seg(t,9.1,9.5)):0;
+ if(!SQ)$('hl').style.transform=`translateY(${pos*80}px)`;
+ const act=Math.round(pos);[0,1,2,3,4].forEach(i=>$('st'+i).classList.toggle('on',i==act));
+ const n=back(seg(t,8.45,8.85))*(1-out);$('note').style.opacity=seg(t,8.45,8.6)*(1-out);$('note').style.transform=`rotate(-3deg) scale(${.85+.15*n})`;
+};
+render(0);
+const snap=$('vApp').cloneNode(true);snap.querySelectorAll('[id]').forEach(e=>e.removeAttribute('id'));snap.removeAttribute('id');snap.style.position='absolute';snap.style.inset='0';$('vBlank').appendChild(snap);
+</script></body></html>
