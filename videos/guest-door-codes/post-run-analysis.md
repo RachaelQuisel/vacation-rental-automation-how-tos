@@ -11,7 +11,7 @@ Built on Oct 7, 2026. Rachael approved the video at about 4:27 PM PT and approve
 
 ## About the door codes
 
-The door codes in this video (4817, 2093, and 6352) are invented sample codes, per La Maison Helper. They are not codes for any real lock. Rachael reviewed them and approved the video as rendered with these codes on Oct 7, 2026.
+The codes shown (4817, 2093, and 6352) are invented sample codes, and Rachael approved them as rendered on Oct 7, 2026. They are not codes for any real lock.
 
 The video shows a setup that is meant to give each guest and contractor their own code, revoke it after checkout, and not reuse it. How well that holds up depends on the lock and the system behind it, which this video does not test.
 
