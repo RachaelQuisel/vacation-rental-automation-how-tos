@@ -1,5 +1,5 @@
 """Tiny rasterizer for simple filled SVG logos (M/L/H/V/C/Z path commands, abs+rel, even-odd fill).
-Used for the official XRAY logo (src/xray-logo/logo-xray.svg) so no cairo dependency is needed."""
+Used for the official XRAY logo (src/logos/xray-logo-b-6c8bc69c.svg) so no cairo dependency is needed."""
 import re, numpy as np
 from PIL import Image, ImageDraw
 

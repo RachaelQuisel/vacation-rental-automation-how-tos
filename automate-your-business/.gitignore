@@ -1,0 +1,4 @@
+scratch/
+outbox/
+__pycache__/
+.venv/

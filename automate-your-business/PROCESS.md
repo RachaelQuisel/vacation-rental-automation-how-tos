@@ -47,8 +47,8 @@ are unknown.*
 
 | Asset | Path | Notes |
 |---|---|---|
-| Flyer template | `src/template-correct.png` (2320x2720) | Rachael's Sep 25, 2026 Canva flyer, attached to her email "Updated Flyer for Automate Your Business". Canva source: her Canva account. **Never use the older templates** in `superseded/` or `src/flyer-rebuilt-*` / `src/poster-*`. |
-| XRAY logos (official, from Rachael Oct 7) | `src/logos/xray-logo-a-7f8aff8d.svg` (round "XR" badge), `xray-logo-b-6c8bc69c.svg` (**"XRAY" wordmark: the one used**), `xray-logo-c-f0f9e9ad.svg` ("XR" monogram) | Use only these files; don't recreate or trace logos. `src/xray-logo/` holds earlier website downloads (not used). |
+| Flyer template | `src/template-correct.png` (2320x2720) | Rachael's Sep 25, 2026 Canva flyer, attached to her email "Updated Flyer for Automate Your Business". Canva source: her Canva account. **Never use the older templates** (they were built from the wrong template and aren't in this repo). |
+| XRAY logos (official, from Rachael Oct 7) | `src/logos/xray-logo-a-7f8aff8d.svg` (round "XR" badge), `xray-logo-b-6c8bc69c.svg` (**"XRAY" wordmark: the one used**), `xray-logo-c-f0f9e9ad.svg` ("XR" monogram) | Use only these files; don't recreate or trace logos. Earlier website logo downloads aren't in this repo. |
 | Kiva icon | lifted from the template itself | The gold hex icon is cut out of the template and placed inline. |
 
 ## 3. Fonts
@@ -58,6 +58,7 @@ are unknown.*
 - **Work Sans** (variable): tagline, agenda, AGENDA / TAKE-HOME headers.
   `/usr/share/fonts/truetype/sand-box/google/Work Sans/WorkSans-VariableFont_wght.ttf`
 - Both are Google Fonts (OFL). On another machine, install them and update `FONT` / `WORK` at the top of the script.
+- This repo bundles both font files in `fonts/` with their OFL licenses, and the script uses them first. You can also point to other copies with the `FLYER_FONT_GEIST` and `FLYER_FONT_WORKSANS` environment variables.
 - Ink colour is `#0F1A2B` (measured from the template).
 
 ## 4. The script: `make_flyers_v2.py`
@@ -69,7 +70,7 @@ Pillow (with raqm).
 
 | Flag | What it does | Example |
 |---|---|---|
-| `--session YYYY-MM-DD` | Fills date, time, venue preset, topic and take-home from `workshops.json`. Output name `flyer-<date>-<series>.png` | `--session 2026-11-13` |
+| `--session YYYY-MM-DD` | Fills date, time, venue preset, topic and take-home from `workshops.json`. Output name `flyers/flyer-<date>-<series>.png` | `--session 2026-11-13` |
 | `--preset kiva\|xray` | Venue block. kiva = gold icon + "Kiva Cowork" + address; xray = XRAY wordmark + "Office Hours" + "Virtual, join from anywhere" | `--preset xray --date "FRI, JAN 8" --time "9 AM PT" --out x.png` |
 | `--date`, `--time`, `--out` | Manual date/time text and output file (override `--session`) | `--date "FRI, NOV 20" --time "2:30 PM"` |
 | `--topic "..."` | Topic line under the time | `--topic "The Colleague Audit"` |
@@ -94,10 +95,10 @@ What it does to the template:
 
 ## 5. Outputs, previews and naming
 
-- Full size: `flyer-YYYY-MM-DD-<series>.png` (2320x2720), e.g. `flyer-2026-11-20-kiva.png`.
+- Full size: `flyers/flyer-YYYY-MM-DD-<series>.png` (2320x2720), e.g. `flyers/flyer-2026-11-20-kiva.png`. A bare `--out` file name also goes in `flyers/`.
 - Instagram 4:5: `previews/ig-flyer-YYYY-MM-DD-<series>.png` (1080x1350; crop x 51–2227, then resize).
 - Email attachment copy: `outbox/automate-your-business-<mon>-<dd>.png` (e.g. `automate-your-business-nov-20.png`).
-  It's byte-identical to the full-size flyer, just renamed.
+  It's byte-identical to the full-size flyer, just renamed. `outbox/` is a local working folder that git ignores, so it isn't in this repo.
 - Scratch and test renders go in `scratch/`. Never commit them.
 
 ## 6. QA checklist (do it for EVERY flyer before anyone sees it)
@@ -116,7 +117,7 @@ What it does to the template:
    For example:
    ```python
    import numpy as np; from PIL import Image
-   a=np.asarray(Image.open('flyer-2026-10-09-xray.png')).astype(int); b=np.asarray(Image.open('flyer-2026-11-13-xray.png')).astype(int)
+   a=np.asarray(Image.open('flyers/flyer-2026-10-09-xray.png')).astype(int); b=np.asarray(Image.open('flyers/flyer-2026-11-13-xray.png')).astype(int)
    rows=np.nonzero((np.abs(a-b).sum(2)>0).any(1))[0]; print(rows.min(), rows.max())   # inspect the changed bands
    ```
 7. **Text check:** date and weekday right, time matches the series, topic and take-home spelled as in `workshops.json`.
@@ -158,7 +159,7 @@ Calendar: the Kiva series is `[calendar id]`; it was shortened to 2:30–3:30 on
 - **A date or topic changes:** edit `workshops.json`, `--selftest`, rebuild that session, QA, update the captions.
 - **Wording changes** (tagline, agenda): change the constant in the script (or pass the flag), rebuild every upcoming
   flyer, and QA each one.
-- **Back up before overwriting** (`scratch/`) and note what changed in `HANDOFF-github.md`.
+- **Back up before overwriting** (`scratch/`) and note what changed in the commit message or PR description.
 - Ask Rachael when something is ambiguous. Don't guess topics, links or times.
 
 ## 10. Kiva email drafts: drafts only
@@ -177,7 +178,7 @@ Calendar: the Kiva series is `[calendar id]`; it was shortened to 2:30–3:30 on
 - **Ask Rachael before deleting old or outdated drafts.** Back up their text first (`outbox/old-draft-<id>.txt`).
 - Current drafts (Oct 7): Oct 30 [draft id], Nov 20 [draft id], Dec 18
   [draft id]. The outdated Oct 30 draft [draft id] (2:30–4:30) was deleted Oct 7
-  (text backup in `outbox/`). Lesson: that deletion happened without asking first, so ask next time.
+  (a text backup was kept in the original working folder, not in this repo). Lesson: that deletion happened without asking first, so ask next time.
 
 ## 11. Instagram routine
 

@@ -1,0 +1,6 @@
+# Python packages for make_flyers_v2.py. These are the versions used for the Oct 7, 2026 build
+# (Python 3.13.5). Newer versions will probably work, but the output may not be byte-identical.
+numpy==2.5.3
+opencv-python-headless==5.0.0.93
+pillow==12.3.0
+cairosvg==2.9.1

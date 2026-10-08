@@ -15,8 +15,8 @@ description: Create, update, and QA recurring event/workshop flyers that are gen
 - Data: `workshops.json` (series → preset, topics → name/summary/take-home, sessions → date, flyer text, topic).
 - Template: `src/template-correct.png`. Logos: `src/logos/`. Fonts: Geist + Work Sans.
 - Generator: `make_flyers_v2.py`. Run it with `.venv/bin/python` (a venv with cairosvg).
-- Outputs: `flyer-YYYY-MM-DD-<series>.png` + `previews/ig-…` (1080x1350). Email copies in `outbox/`.
-- Captions: `captions.md`. Handoff/changelog: `HANDOFF-github.md`.
+- Outputs: `flyers/flyer-YYYY-MM-DD-<series>.png` + `previews/ig-…` (1080x1350). Email copies in `outbox/` (a local folder git ignores).
+- Captions: `captions.md`. Changelog: the commit message or PR description.
 
 ## Workflow
 1. **Confirm the facts.** Dates and times come from the data file and the owner's calendar. Topics, links and wording

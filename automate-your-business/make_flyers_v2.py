@@ -67,7 +67,15 @@ from PIL import Image, ImageDraw, ImageFont
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 TEMPLATE = os.path.join(HERE, 'src', 'template-correct.png')
-FONT = '/usr/share/fonts/truetype/sand-box/google/Geist/Geist-VariableFont_wght.ttf'
+def _font_path(env, file, system):
+    # Font lookup order: an environment variable, then fonts/ next to this script (bundled in the
+    # repo), then the system path used on the original build machine.
+    if os.environ.get(env): return os.environ[env]
+    local = os.path.join(HERE, 'fonts', file)
+    return local if os.path.exists(local) else system
+
+FONT = _font_path('FLYER_FONT_GEIST', 'Geist-VariableFont_wght.ttf',
+                  '/usr/share/fonts/truetype/sand-box/google/Geist/Geist-VariableFont_wght.ttf')
 INK = np.array([15, 26, 43], float)          # #0F1A2B, measured from the template
 S = 4                                        # supersampling factor
 RIGHT_LIMIT = 2250                           # text must end before this x (torn-paper panel)
@@ -201,7 +209,8 @@ def draw(arr, s, pos, size, wght, track, fade=False, min_gap_em=0.22, font=None)
     arr[Y0:Y0 + H, X0:X0 + W] = (reg * (1 - a) + ink * a).round().clip(0, 255).astype(np.uint8)
 
 # ---- Template edits applied to EVERY flyer (Rachael, Oct 7, 2026) ---------------------------
-WORK = '/usr/share/fonts/truetype/sand-box/google/Work Sans/WorkSans-VariableFont_wght.ttf'
+WORK = _font_path('FLYER_FONT_WORKSANS', 'WorkSans-VariableFont_wght.ttf',
+                  '/usr/share/fonts/truetype/sand-box/google/Work Sans/WorkSans-VariableFont_wght.ttf')
 # 1. Right-panel blurb -> her tagline (Work Sans, same size, style and line pitch as the old blurb)
 TAGLINE = 'Take your workflow from messy idea to a system that works.'   # Rachael, Oct 7 (final)
 TAG_STY = dict(size=53, wght=430, track=-0.5, font=WORK)
@@ -448,7 +457,10 @@ def build(out, date, time, venue=None, lines=None, no_logo=False, fade_time=Fals
     keep = np.ones(arr.shape[:2], bool)
     for y0, y1, x0, x1 in boxes: keep[y0:y1, x0:x1] = False
     assert (arr[keep] == src[keep]).all(), 'pixels outside edit boxes changed'
-    out = os.path.join(HERE, out) if not os.path.isabs(out) else out
+    if not os.path.isabs(out):
+        # a bare file name goes in flyers/, where the repo keeps the full-size flyers
+        out = os.path.join(HERE, 'flyers', out) if not os.path.dirname(out) else os.path.join(HERE, out)
+    os.makedirs(os.path.dirname(out), exist_ok=True)
     Image.fromarray(arr).save(out, optimize=True)
     print('saved', out)
     if ig:
