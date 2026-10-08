@@ -6,6 +6,8 @@ It runs as two series. Both teach the same three topics in the same order: one s
 
 Sources: `workshops.json` and `captions.md` in this folder, plus the printed flyers in `flyers/`. Details marked `[... NEEDED]` aren't known yet.
 
+Emails with the Kiva Cowork events contact about the in-person sessions are in [kiva-emails.md](kiva-emails.md).
+
 ## The two series
 
 | | In person (live) | Virtual |
