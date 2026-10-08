@@ -1,0 +1,37 @@
+{
+  "_about": "Automate Your Business schedule and topics. Source: Rachael (Oct 7, 2026). Kiva sessions are 1 hour, 2:30-3:30 PM PT (Rachael, Oct 7); the Google Calendar series still shows 2:30-4:30 PM. Keep this file and the calendar in sync. Used by make_flyers_v2.py --session <date> and the Instagram routine.",
+  "series": {
+    "xray": {"name": "XRAY Office Hours", "format": "virtual", "when": "2nd Friday, 9-10 AM PT",
+             "location": "Virtual, join from anywhere", "join_link": null, "preset": "xray"},
+    "kiva": {"name": "Kiva Cowork", "format": "in person", "when": "last Friday, 2:30-3:30 PM PT (Nov/Dec 2026 moved a week early for the holidays)",
+             "location": "Kiva Cowork, 1117 State St, Santa Barbara, upstairs conference room", "preset": "kiva"}
+  },
+  "topics": {
+    "loop-audit": {
+      "number": "01", "name": "The Loop Audit",
+      "summary": "Map one recurring work loop: trigger, steps, decision, output, and escape hatch. Identify the single step you can build this week.",
+      "minutes": 60, "hands_on_minutes": 22,
+      "takehome": "Your Loop Audit worksheet"
+    },
+    "colleague-audit": {
+      "number": "02", "name": "The Colleague Audit",
+      "summary": "Choose a real task, write a checkable definition of done, and identify exactly the access an AI colleague needs to complete it. Focus on repeatable completion and a supervised filter before independent action.",
+      "minutes": 60, "hands_on_minutes": 20,
+      "takehome": "Your Colleague Audit worksheet"
+    },
+    "proof-audit": {
+      "number": "03", "name": "The Proof Audit",
+      "summary": "Judge whether AI is paying off by the speed of real outcomes. Draft a next-quarter budget split, a one-page Rulebook defining five contested business words, and one hard rule.",
+      "minutes": 60, "hands_on_minutes": 20,
+      "takehome": "Your one-page Rulebook"
+    }
+  },
+  "sessions": [
+    {"date": "2026-10-09", "series": "xray", "start": "09:00", "end": "10:00", "flyer_date": "FRI, OCT 9",  "flyer_time": "9 AM PT", "topic": "loop-audit"},
+    {"date": "2026-10-30", "series": "kiva", "start": "14:30", "end": "15:30", "flyer_date": "FRI, OCT 30", "flyer_time": "2:30 PM", "topic": "loop-audit"},
+    {"date": "2026-11-13", "series": "xray", "start": "09:00", "end": "10:00", "flyer_date": "FRI, NOV 13", "flyer_time": "9 AM PT", "topic": "colleague-audit"},
+    {"date": "2026-11-20", "series": "kiva", "start": "14:30", "end": "15:30", "flyer_date": "FRI, NOV 20", "flyer_time": "2:30 PM", "topic": "colleague-audit"},
+    {"date": "2026-12-11", "series": "xray", "start": "09:00", "end": "10:00", "flyer_date": "FRI, DEC 11", "flyer_time": "9 AM PT", "topic": "proof-audit"},
+    {"date": "2026-12-18", "series": "kiva", "start": "14:30", "end": "15:30", "flyer_date": "FRI, DEC 18", "flyer_time": "2:30 PM", "topic": "proof-audit"}
+  ]
+}
