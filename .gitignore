@@ -2,3 +2,5 @@ node_modules/
 src/out/
 src/out-*/
 .DS_Store
+src/fonts/.fccache/
+src/music/
