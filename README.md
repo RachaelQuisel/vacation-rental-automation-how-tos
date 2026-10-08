@@ -25,3 +25,7 @@ All videos use sample data. The names, dates, numbers, and links on screen are m
 ## Credits
 
 Some videos have music. Each video's music credit is in the README in its folder. The music is licensed under CC BY 4.0, which asks that the credit stay with the video when you share it.
+
+## Copyright
+
+Copyright (c) 2026 Rachael Quisel. All rights reserved. This repo is public to view, but none of it may be copied, reused, or adapted without written permission. See [LICENSE](LICENSE). The music keeps its own CC BY 4.0 license, as noted above.
