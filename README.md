@@ -22,6 +22,14 @@ All videos use sample data. The names, dates, numbers, and links on screen are m
 - [Workflow diagrams](docs/workflow.md): the production pipeline and a beat-by-beat view of a loop.
 - [Build code](src/): the scene files and scripts for each video.
 
+## Automate Your Business workshops
+
+Material for Rachael's free monthly Automate Your Business workshop, in person at Kiva Cowork and online as XRAY Office Hours. It's all in [automate-your-business/](automate-your-business/):
+
+- [Events](automate-your-business/events.md): 2026 dates, times, locations, topics, and take-homes for both series.
+- [Flyers](automate-your-business/flyers/) and [Instagram versions](automate-your-business/previews/) for each 2026 session.
+- [How the flyers are made](automate-your-business/PROCESS.md): the runbook, plus the generator script and schedule data.
+
 ## Credits
 
 Some videos have music. Each video's music credit is in the README in its folder. The music is licensed under CC BY 4.0, which asks that the credit stay with the video when you share it.
