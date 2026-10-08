@@ -199,3 +199,17 @@ Full detail is in [the script](../videos/property-inspection/script.md), [the po
 - Sample data: the inspector Nina L., the plumber Marco R., and the spa tech Leo S., with a June that starts on a Sunday.
 - Poster: frame 264 (8.8 seconds).
 - Music: "Valse Gymnopedie" by Kevin MacLeod, CC BY 4.0.
+
+### A morning briefing in Slack so your whole team starts the day on the same page
+
+Full detail is in [the script](../videos/ops-today/script.md), [the post-run analysis](../videos/ops-today/post-run-analysis.md), and [the field guide](../videos/ops-today/field-guide.md). In short:
+
+- Headline: "A morning briefing in Slack so your whole team starts the day on the same page."
+- Four steps: the briefing is built automatically each morning, it posts to the team's Slack channel before the workday starts, it covers alerts, bookings, reviews, money, guest messages, and cleaning coverage in one place, and everyone sees the same plan.
+- Wording: steps 2 and 4 were softened from the suggested wording to avoid absolute claims.
+- Demo surfaces: a large "Team chat" window styled like Slack (no logo, no handles) with a dark sidebar and the "# ops-today" channel, next to a column of three teammate cards in small phone-style frames.
+- Layout: built from the four-step layout of the other videos, with a taller cream panel (top 170, bottom 912). In wide, the window is 675x720 at 925/160, the cards are 266x196 at x 1624 (tops 172, 384, and 596), and the paper note is under the cards at 1612/826. In square, the window is scaled 0.78 at 24/180, the cards are 440x150 at x 600 (tops 176, 340, and 504), the note is at 640/676, and the steps sit in a 2x2 grid of cards.
+- Class names: new names prefixed `o` and `tm` avoid clashes with styles the layout was copied from.
+- Sample data: the teammates Maria G. (cleaner), Nina L. (inspector), and Omar D. (handyman), and the guests Dana K., Sam R., and Lee T., on Wed 6/18.
+- Poster: frame 264 (8.8 seconds).
+- Music: "Suave Standpipe" by Kevin MacLeod, CC BY 4.0.

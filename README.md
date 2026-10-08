@@ -11,6 +11,7 @@ Videos are added through pull requests.
 - [When your cleaner can't make it, the next one is asked automatically](videos/backup-cleaner-coverage/): if a cleaner declines a calendar invite, it goes to the next one, and you get a text if a day still needs coverage.
 - [Door codes for every guest, assigned and revoked automatically](videos/guest-door-codes/): each guest gets their own door code in the welcome message and reminders, and the code is revoked after checkout.
 - [When an inspection finds a problem, the right contractor is scheduled automatically](videos/property-inspection/): your inspector flags a problem on a checklist app, one tap texts the right contractor, who picks the next open time, and everyone gets a confirmation.
+- [A morning briefing in Slack so your whole team starts the day on the same page](videos/ops-today/): every morning, one post in your team's channel covers alerts, bookings, reviews, money, guest messages, and cleaning coverage, so everyone sees the same plan.
 
 More videos are planned. They will be added here as they are finished.
 
