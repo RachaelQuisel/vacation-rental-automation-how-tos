@@ -186,3 +186,16 @@ Full detail is in [the script](../videos/guest-door-codes/script.md) and [the po
 - Sample data: the guests Dana K. and Sam R., the cleaner Maria, and the invented sample codes 4817, 2093, and 6352.
 - Poster: frame 264 (8.8 seconds).
 - Music: "Parisian" by Kevin MacLeod, CC BY 4.0.
+
+### When an inspection finds a problem, the right contractor is scheduled automatically
+
+Full detail is in [the script](../videos/property-inspection/script.md), [the post-run analysis](../videos/property-inspection/post-run-analysis.md), and [the field guide](../videos/property-inspection/field-guide.md). In short:
+
+- Headline: "When an inspection finds a problem, the right contractor is scheduled automatically."
+- Four steps: the inspector works through a checklist app, one tap texts the right contractor, the contractor picks the next open time, and everyone gets a confirmation by text and email while the maintenance channel is updated.
+- Demo surfaces: two phones side by side (the inspector's checklist app and the contractor's text thread), a "Team chat" window styled like Slack with a "# maintenance" channel (no logo, no handles), and, in step 4, a text confirmation card and an email confirmation card.
+- Layout: built from the four-step layout of the other videos, with a taller cream panel (top 170, bottom 912) for the long headline and steps. In wide, the phones are 270x560 at 935/168 and 1232/210, the chat window is 355x346 at 1530/150, and the cards are at 1530/528 and 1530/690, with the note under the phones. In square, the phones are scaled 0.9 at 28/226 and 290/226, the chat window is 496x262 at 560/190, the cards are 496 wide and stacked at 468 and 572, the note is at 626/700, and the steps sit in a 2x2 grid of cards.
+- Class names: new names (`.phn`, `.pgb`, `.smp2`) avoid clashes with styles the layout was copied from.
+- Sample data: the inspector Nina L., the plumber Marco R., and the spa tech Leo S., with a June that starts on a Sunday.
+- Poster: frame 264 (8.8 seconds).
+- Music: "Valse Gymnopedie" by Kevin MacLeod, CC BY 4.0.

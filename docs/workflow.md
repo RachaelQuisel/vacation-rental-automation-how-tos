@@ -122,3 +122,27 @@ sequenceDiagram
     Note over S,T: 8.8 s, poster frame
     Note over S,T: 9.0 to 9.6 s, opening card fades back in
 ```
+
+### When an inspection finds a problem, the right contractor is scheduled automatically
+
+```mermaid
+sequenceDiagram
+    participant S as Steps panel
+    participant I as Inspector phone
+    participant C as Contractor phone
+    participant T as Team chat and cards
+    Note over S,T: 0.0 s, step 1 is on, checklist at 0 of 6
+    I->>I: 0.35 to 1.15 s, three items ticked
+    I->>I: 1.6 to 1.72 s, kitchen sink flagged with a note
+    S->>S: step 2, sheet slides up at 2.4 s
+    I->>C: 3.05 to 3.65 s, tap Send to plumber, the text flies over
+    C->>C: 3.68 to 4.18 s, job text and three time slots
+    S->>S: step 3
+    C->>I: 5.2 to 5.65 s, contractor taps the next open time and replies
+    S->>S: step 4
+    T->>I: 6.9 s, confirmation banner on the inspector phone
+    T->>C: 7.08 s, confirmation text to the contractor
+    T->>T: 7.25 to 7.85 s, text card, email card, and maintenance post
+    Note over S,T: 8.3 s, paper note. 8.8 s, poster frame
+    Note over S,T: 9.0 to 9.6 s, opening screens fade back in
+```
