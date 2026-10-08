@@ -37,9 +37,9 @@ Full prerequisites, tool versions, and font setup are in [src/README.md](../../s
 git clone https://github.com/RachaelQuisel/vacation-rental-automation-how-tos.git
 cd vacation-rental-automation-how-tos/src
 npm ci
-export FONTCONFIG_FILE="$PWD/fonts/fonts.conf"   # optional, Linux: use only the bundled fonts
+mkdir -p ~/.local/share/fonts && cp fonts/*.ttf ~/.local/share/fonts/ && fc-cache -f   # Linux: install the fonts (macOS: see src/README.md)
 
-# Silent loops, posters (frame 240 (8.0 seconds)), and QC frames, in src/out/
+# Silent loops, posters (frame 240, 8.0 seconds), and QC frames, in src/out/
 ./render-v1.sh
 
 # Music version. The audio file is not in this repo, so download it first.
@@ -90,3 +90,12 @@ An earlier draft was about 120 words, with a numbered three-step list. Rachael c
 If the music version is shared with the post, keep the credit line with it: Music: "Le Croissant" by Shane Ivers (silvermansound.com), CC BY 4.0.
 
 **Website.** The silent loops are on the My work page at https://airbnbai.rent/automate.html under the heading "Property managers, tired of chasing cleaners and calendars?" When checked on Oct 7, 2026, at about 8:36 PM PT, the loops on the page were byte for byte the same as the ones in this folder.
+
+The website copies were handed off with these SHA-256 checksums, which match the loops in this folder and a fresh rebuild from this repo (checked Oct 7, 2026):
+
+```
+8b031e3fb7d30e84dfc9bbe5a57b1c8280007270066eaadf206114f8efd5473a  loop-1920x1080.mp4
+d9ef3d390e714b92ce1e0e3dbe7ed1bfc9c37445e57ebfd261988fb68160ecf0  loop-1080x1080.mp4
+```
+
+The website shows smaller WebP copies of the two posters, plays the square loop on screens 640 px wide or less, and adds no caption under the video.

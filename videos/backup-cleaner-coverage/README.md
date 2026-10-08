@@ -37,9 +37,9 @@ Full prerequisites, tool versions, and font setup are in [src/README.md](../../s
 git clone https://github.com/RachaelQuisel/vacation-rental-automation-how-tos.git
 cd vacation-rental-automation-how-tos/src
 npm ci
-export FONTCONFIG_FILE="$PWD/fonts/fonts.conf"   # optional, Linux: use only the bundled fonts
+mkdir -p ~/.local/share/fonts && cp fonts/*.ttf ~/.local/share/fonts/ && fc-cache -f   # Linux: install the fonts (macOS: see src/README.md)
 
-# Silent loops, posters (frame 264 (8.8 seconds)), and QC frames, in src/out-v3/
+# Silent loops, posters (frame 264, 8.8 seconds), and QC frames, in src/out-v3/
 ./render-v3.sh
 
 # Music version. The audio file is not in this repo, so download it first.
