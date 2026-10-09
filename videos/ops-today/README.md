@@ -74,4 +74,4 @@ In a dry run on Oct 7, 2026: the silent loops, posters, and music version all re
 
 ## Where it was shared
 
-Not shared publicly yet as of Oct 7, 2026. A change to add it to the My work page at airbnbai.rent is pending and was not live as of Oct 7, 2026.
+It went live on the My work page at https://airbnbai.rent/automate.html on Oct 7, 2026. The change was merged at 10:58 PM PT. When checked at about 11:04 PM PT, the loops on the page were byte for byte the same as the ones in this folder.
