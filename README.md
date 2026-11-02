@@ -12,6 +12,7 @@ Videos are added through pull requests.
 - [Door codes for every guest, assigned and revoked automatically](videos/guest-door-codes/): each guest gets their own door code in the welcome message and reminders, and the code is revoked after checkout.
 - [When an inspection finds a problem, the right contractor is scheduled automatically](videos/property-inspection/): your inspector flags a problem on a checklist app, one tap texts the right contractor, who picks the next open time, and everyone gets a confirmation.
 - [A morning briefing in Slack so your whole team starts the day on the same page](videos/ops-today/): every morning, one post in your team's channel covers alerts, bookings, reviews, money, guest messages, and cleaning coverage, so everyone sees the same plan.
+- [Every night priced right on Airbnb and VRBO](videos/daily-pricing-sync/): every night on Airbnb and VRBO stays priced the way you set it. Each morning it checks the next 12 months, fixes any night that's off, and posts a short report to your Slack.
 
 More videos are planned. They will be added here as they are finished.
 
