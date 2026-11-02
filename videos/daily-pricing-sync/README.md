@@ -4,6 +4,10 @@ Every night on Airbnb and VRBO stays priced the way you set it. Each morning it 
 
 Uses sample data. The names, dates, and prices in the video are made up.
 
+> people were booking months out at prices I hadn't updated yet, which cost me money. Now the prices update the moment the dates become available
+>
+> Rachael Quisel
+
 ## Files
 
 | File | What it is |
