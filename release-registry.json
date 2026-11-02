@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "repository": "RachaelQuisel/vacation-rental-automation-how-tos",
+  "packages": [],
+  "skills": [
+    {
+      "path": "automate-your-business/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "520105a2ca969a4709a6239ebd96a9b4be820572b8efd64d49ad67b3525ee827",
+      "source": "automate-your-business/SKILL.md",
+      "guide": "automate-your-business/README.md"
+    }
+  ],
+  "copies": []
+}

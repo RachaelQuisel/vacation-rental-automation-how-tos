@@ -1,9 +1,23 @@
 ---
 name: workshop-flyers
+version: 1.0.1
 description: Create, update, and QA recurring event/workshop flyers that are generated from a fixed image template plus a schedule data file (e.g. Rachael Quisel's "Automate Your Business" flyers in this folder). Use when asked to make flyers for new or future sessions, change a date, time, topic, tagline, agenda, take-home or logo on existing flyers, write the matching Instagram captions, or prepare (never send) email drafts that carry a flyer.
 ---
 
 # Workshop flyers
+
+## Purpose in plain English
+
+This skill helps you create and check workshop flyers from an existing design template and a confirmed event schedule.
+
+## How to explain the result
+
+For a client-facing explanation, use ordinary words and the requested format. Explain unfamiliar abbreviations. Name what each number counts and explain its practical meaning. Keep internal identifiers out of the explanation. Keep necessary technical details in the working steps and technical references.
+
+## Following the process
+
+Use the process below. Preserve its conditions, commands, checks, and approval rules. Use information the user already supplied. Follow the existing questions or stopping rules when required information is missing.
+
 
 ## When to use
 - Someone needs a flyer for an upcoming session, or a batch of future flyers.
