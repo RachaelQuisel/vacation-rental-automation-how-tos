@@ -1,6 +1,6 @@
-# Daily pricing sync for Airbnb and VRBO
+# Every night priced right on Airbnb and VRBO
 
-Each day, nightly prices are worked out in one place and the same rates are sent to both Airbnb and VRBO, so the two listings stay in step without updating each one by hand.
+Every night on Airbnb and VRBO stays priced the way you set it. Each morning it checks the next 12 months, fixes any night that's off, and posts a short report to your Slack.
 
 Uses sample data. The names, dates, and prices in the video are made up.
 
